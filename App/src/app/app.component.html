@@ -1,5 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="row">
+
+  <div class="col-sm-12">
+    <h1>Bindings</h1>
+
+    <h3 [style.color]="'blue'">Property Bindings []</h3>
+
+    <img [src]="imagenUrl" [alt]="'landscape'" [width]="imagenWidth">
+    <p [style.color]="'red'" [style.background-color]="'black'" [innerText]="'Hola amigos'"></p>
+    <div [innerHTML]="html"></div>
+
+    <br>
+    <h3 [style.color]="'blue'">Event Bindings ()</h3>
+
+    <button class="btn btn-block btn-info" (click)="aumentarWidht($event)">Aumentar tamaño imagen</button>
+    <h5 (mouseenter)="restarWidht()">Restar Imagen</h5>
+
+    <h3 [style.color]="'blue'">NgModule (two way data binding) [()]</h3>
+
+    <label for="width">Width</label>
+    <input id="width" type="number" [(ngModel)] = "imagenWidth">
+
+  </div>
+
   <div class="col-sm-4"></div>
   <div class="col-sm-4">
     <br>
