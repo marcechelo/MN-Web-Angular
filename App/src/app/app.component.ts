@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  titulo = 'web';
+  usuario ={
+    nombre: 'marcelo',
+    apellido: 'nieto',
+  };
+  arregloNumeros = [5,4,3,2,1];
+  mostrarTitulo = true;
+
 }
