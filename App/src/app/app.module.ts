@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
+import { SeleccionComponent } from './Netflix/seleccion/seleccion.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SeleccionComponent
   ],
   imports: [
     BrowserModule,
