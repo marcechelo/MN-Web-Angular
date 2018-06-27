@@ -1,3 +1,15 @@
-<p>
-  seleccion works!
+<!--<p>
+  seleccion works! {{contador}}
 </p>
+
+<input type="text" [(ngModel)] ="contador">
+<button class="btn btn-danger" (click)="aumentarContador()">Sumar</button>-->
+
+<div class="row contenedor" (click)="seleccionoUsuario()">
+  <div class="col-sm-12">
+    <img class="borde" [src]="imagen" alt="">
+  </div>
+  <div class="col-sm-12">
+    <p>{{texto}}</p>
+  </div>
+</div>

@@ -41,7 +41,47 @@
   <div class="col-sm-4"></div>
 </div>-->
 
-<h1>Componente Seleccion</h1>
+<!--<h1>Componente Seleccion</h1>
 
-<app-seleccion></app-seleccion>
+<div *ngIf="mostrarComponente">
+  PAPA: {{contadorDesdePapa}}
+  <app-seleccion [contador]= "contadorDesdePapa"
+  (cambioElContador)="actualizarContador($event)"></app-seleccion>
+</div>
+
+<div>
+  <button class="btn btn-dark" (click)="contadorDesdePapa = contadorDesdePapa +1 ">aumentar valor de contador</button>
+</div>
+
+<button class="btn btn-info" (click)="mostrarComponente = !mostrarComponente">cambiar, mostrar seleccion</button>-->
+
+<div class="fondo">
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h2 class="titulo">¿Quién está viendo ahora?</h2>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-2" *ngFor="let usuario of arregloUsuarios">
+    <app-seleccion [texto]="usuario.texto" [imagen]="usuario.imagen" ></app-seleccion>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <p class="perfiles">Administrar Perfiles</p>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+
+</div>
+
+
+
 

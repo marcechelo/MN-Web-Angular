@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-seleccion',
@@ -7,20 +7,39 @@ import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/c
 })
 export class SeleccionComponent implements OnInit,OnDestroy,OnChanges {
 
+  //propiedad del web component
+  @Input() contador;
+  @Input() imagen: string;
+  @Input() texto: string;
+  //Crear evento de web Component
+  @Output() cambioElContador = new EventEmitter();
+  @Output() selecciono:EventEmitter<string> = new EventEmitter();
+
   constructor() {
     console.log('constructor');
   }
 
-  ngOnChanges() {
-    console.log('on changes');
+  seleccionoUsuario(){
+    console.log('selecciono', this.texto);
+    this.selecciono.emit(this.texto);
   }
 
-  ngOnDestroy(): void {
-    console.log('on destroy');
+  aumentarContador(){
+    this.contador = this.contador + 1;
+    this.cambioElContador.emit(this.contador)
   }
 
   ngOnInit() {
     console.log('on init');
+    console.log('contador',this.contador);
+  }
+
+  ngOnChanges(cambios){
+    console.log('on changes',cambios);
+  }
+
+  ngOnDestroy(): void {
+    console.log('on destroy');
   }
 
 }
