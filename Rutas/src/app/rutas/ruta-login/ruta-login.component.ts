@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CredencialesService} from "../../Servicios/credenciales.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-ruta-login',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaLoginComponent implements OnInit {
 
-  constructor() { }
+  password = '';
+  constructor(private _credencialesService: CredencialesService,
+              private _router: Router) { }
 
   ngOnInit() {
   }
 
+  login() {
+    this._credencialesService.login(this.password);
+    const rutaHomeUsuario = [
+      '/home',
+      'usuario',
+      1,
+      'epn',
+    ];
+    this._router.navigate(rutaHomeUsuario);
+  }
 }

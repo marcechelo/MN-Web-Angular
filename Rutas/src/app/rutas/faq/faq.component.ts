@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-faq',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _httpClient: HttpClient) { }
 
   ngOnInit() {
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    console.log('INICIO');
+    const observablePost$ = this._httpClient.post(url,{id:1,title:'hola'});
+    
+    observablePost$.subscribe(
+      (respuestaOk)=>{
+          console.log(respuestaOk);
+      },
+      (respuestaError)=>{
+        console.log(respuestaError);
+      },
+      ()=>{
+        console.log('Completado');
+      },
+    );
+    console.log('FIN');
   }
 
 }

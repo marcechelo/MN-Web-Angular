@@ -12,6 +12,8 @@ import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.componen
 import {AutorizacionService} from "./Servicios/autorizacion.service";
 import {CredencialesService} from "./Servicios/credenciales.service";
 import { RutaLoginComponent } from './rutas/ruta-login/ruta-login.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { RutaLoginComponent } from './rutas/ruta-login/ruta-login.component';
     HomeComponent,
     RutaPerfilComponent,
     RutaUsuarioComponent,
-    RutaLoginComponent
+    RutaLoginComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       RUTAS_APP,
       {
