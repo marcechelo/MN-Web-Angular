@@ -4,11 +4,15 @@ import {FaqComponent} from "./rutas/faq/faq.component";
 import {NoEncontradoComponent} from "./rutas/no-encontrado/no-encontrado.component";
 import {RutaUsuarioComponent} from "./rutas/ruta-usuario/ruta-usuario.component";
 import {RutaPerfilComponent} from "./rutas/ruta-perfil/ruta-perfil.component";
+import {AutorizacionService} from "./Servicios/autorizacion.service";
 
 export const RUTAS_APP: Routes =[
   {
     path:'home',
     component:HomeComponent,
+    canActivate: [
+      AutorizacionService
+    ],
     children: [
       {
         path:'usuario/:usuarioID/:universidad',
