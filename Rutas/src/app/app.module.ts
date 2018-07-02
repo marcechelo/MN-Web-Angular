@@ -9,6 +9,7 @@ import {RouterModule} from "@angular/router";
 import {RUTAS_APP} from "./app.routes";
 import { RutaPerfilComponent } from './rutas/ruta-perfil/ruta-perfil.component';
 import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
+import {AutorizacionService} from "./Servicios/autorizacion.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.componen
       }
     )
   ],
-  providers: [],
+  providers: [
+    AutorizacionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

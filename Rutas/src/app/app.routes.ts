@@ -11,7 +11,7 @@ export const RUTAS_APP: Routes =[
     component:HomeComponent,
     children: [
       {
-        path:'usuario/:usuarioID',
+        path:'usuario/:usuarioID/:universidad',
         component:RutaUsuarioComponent
       },
       {
