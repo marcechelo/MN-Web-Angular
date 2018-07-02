@@ -10,9 +10,9 @@ export class CredencialesService {
 
   login(password:string){
     if (password==='mashi'){
-    this.estaLogeados = true;
+    this.estaLogeados = false;
     }else {
-      this.estaLogeados = false;
+      this.estaLogeados = true;
     }
   }
 }

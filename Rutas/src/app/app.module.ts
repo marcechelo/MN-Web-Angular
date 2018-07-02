@@ -10,6 +10,8 @@ import {RUTAS_APP} from "./app.routes";
 import { RutaPerfilComponent } from './rutas/ruta-perfil/ruta-perfil.component';
 import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
 import {AutorizacionService} from "./Servicios/autorizacion.service";
+import {CredencialesService} from "./Servicios/credenciales.service";
+import { RutaLoginComponent } from './rutas/ruta-login/ruta-login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {AutorizacionService} from "./Servicios/autorizacion.service";
     NoEncontradoComponent,
     HomeComponent,
     RutaPerfilComponent,
-    RutaUsuarioComponent
+    RutaUsuarioComponent,
+    RutaLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import {AutorizacionService} from "./Servicios/autorizacion.service";
     )
   ],
   providers: [
-    AutorizacionService
+    AutorizacionService,
+    CredencialesService
   ],
   bootstrap: [AppComponent]
 })

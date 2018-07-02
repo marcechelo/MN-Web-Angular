@@ -5,6 +5,7 @@ import {NoEncontradoComponent} from "./rutas/no-encontrado/no-encontrado.compone
 import {RutaUsuarioComponent} from "./rutas/ruta-usuario/ruta-usuario.component";
 import {RutaPerfilComponent} from "./rutas/ruta-perfil/ruta-perfil.component";
 import {AutorizacionService} from "./Servicios/autorizacion.service";
+import {RutaLoginComponent} from "./rutas/ruta-login/ruta-login.component";
 
 export const RUTAS_APP: Routes =[
   {
@@ -27,6 +28,10 @@ export const RUTAS_APP: Routes =[
   {
     path:'faq',
     component:FaqComponent
+  },
+  {
+    path:'login',
+    component:RutaLoginComponent
   },
   {
     path:'no-encontrado',
